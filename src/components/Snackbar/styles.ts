@@ -1,4 +1,4 @@
-import { ViewStyle, TextStyle, Platform } from "react-native";
+import {ViewStyle, TextStyle, Platform} from "react-native";
 // import { Colors, Fonts } from "../../styles";
 
 export default {

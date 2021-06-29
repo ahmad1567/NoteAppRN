@@ -1,8 +1,8 @@
-import { Note } from "../../Framework.ts/models";
+import {Note} from "../../Framework.ts/models";
 
 export interface NotesState {
-    notes: Note[],
-    isLoading: boolean,
-    isNoteUpdating: boolean,
-    hasError: boolean
+  notes: Note[];
+  isLoading: boolean;
+  isNoteUpdating: boolean;
+  hasError: boolean;
 }

@@ -1,4 +1,4 @@
-import { ViewStyle, TextStyle } from "react-native";
+import {ViewStyle, TextStyle} from "react-native";
 
 export const actionSheetStyles = {
   buttonBox: {
@@ -41,8 +41,7 @@ export default {
       marginLeft: hasIcon ? MARGIN_LEFT_WITH_ICON : MARGIN_LEFT_WITHOUT_ICON,
     };
   },
-  buttonOptionText: {
-  } as TextStyle,
+  buttonOptionText: {} as TextStyle,
   icon: {
     width: 24,
     height: 24,

@@ -1,10 +1,10 @@
-import React, { useState, useRef } from "react";
-import { Animated, AccessibilityInfo } from "react-native";
+import React, {useState, useRef} from "react";
+import {Animated, AccessibilityInfo} from "react-native";
 // import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
-import { AnimationsUtils, LocaleUtils } from "../../utilities";
-import { SnackbarElement, SnackbarElementProps } from "./SnackbarElement";
-import { SnackbarContext, SnackbarContextArgs } from ".";
+import {AnimationsUtils, LocaleUtils} from "../../utilities";
+import {SnackbarElement, SnackbarElementProps} from "./SnackbarElement";
+import {SnackbarContext, SnackbarContextArgs} from ".";
 
 export enum Duration {
   Short = 3000,
@@ -22,7 +22,7 @@ export enum Duration {
  *
  */
 export function useSnackbar(): SnackbarContext {
-  const idMapRef = useRef<{ [key: string]: boolean }>({});
+  const idMapRef = useRef<{[key: string]: boolean}>({});
   const [isVisible, setIsVisible] = useState(false);
   const [isErrorSnackbar, setIsErrorSnackbar] = useState(false);
   const [text, setText] = useState("");
@@ -37,7 +37,7 @@ export function useSnackbar(): SnackbarContext {
   const {
     snackbarDisplayAnimation,
     snackbarHideAnimation,
-    snackbarAnimationParams: { translateYInitial, travelDuration },
+    snackbarAnimationParams: {translateYInitial, travelDuration},
   } = AnimationsUtils;
   const animatedValue = useRef(new Animated.Value(translateYInitial)).current;
 
@@ -61,7 +61,7 @@ export function useSnackbar(): SnackbarContext {
     if (idMapRef.current[id]) {
       activeAnimation.current?.stop();
       const hideAnimation = snackbarHideAnimation(animatedValue);
-      hideAnimation.start(({ finished }) => {
+      hideAnimation.start(({finished}) => {
         if (finished) setIsVisible(false);
       });
       activeAnimation.current = hideAnimation;
@@ -74,7 +74,7 @@ export function useSnackbar(): SnackbarContext {
       await new Promise<void>(resolve => {
         activeAnimation.current?.stop();
         const hideAnimation = snackbarHideAnimation(animatedValue);
-        hideAnimation.start(({ finished }) => {
+        hideAnimation.start(({finished}) => {
           if (finished) {
             setIsVisible(false);
             resolve();
@@ -87,7 +87,7 @@ export function useSnackbar(): SnackbarContext {
   };
 
   const display = (Args: SnackbarContextArgs = {}): string => {
-    const currentId = Math.random() * 1000 % 5 + "h";
+    const currentId = ((Math.random() * 1000) % 5) + "h";
     idMapRef.current[currentId] = true;
     const {
       textArg,
@@ -126,17 +126,17 @@ export function useSnackbar(): SnackbarContext {
             onPressCBArg();
             displayAnimation.stop();
             const hideAnimation = snackbarHideAnimation(animatedValue);
-            hideAnimation.start(({ finished }) => {
+            hideAnimation.start(({finished}) => {
               if (finished) setIsVisible(false);
             });
             activeAnimation.current = hideAnimation;
           },
           travelDuration,
-          { leading: true, trailing: false },
+          {leading: true, trailing: false},
         ),
       });
 
-    displayAnimation.start(({ finished }) => {
+    displayAnimation.start(({finished}) => {
       if (!isPersistent) {
         if (finished) {
           setIsVisible(false);

@@ -1,11 +1,11 @@
-import { ViewStyle } from "react-native";
+import {ViewStyle} from "react-native";
 
 interface MainNavigatorStyles {
-    container: ViewStyle
+  container: ViewStyle;
 }
 export const styles: MainNavigatorStyles = {
-    container: {
-        flex: 1,
-        paddingTop: 50,
-    }
-}
+  container: {
+    flex: 1,
+    paddingTop: 50,
+  },
+};

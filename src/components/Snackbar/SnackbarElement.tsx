@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import {
   Animated,
   Text,
@@ -6,7 +6,7 @@ import {
   AccessibilityInfo,
   findNodeHandle,
   Platform,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
 /**
@@ -73,10 +73,9 @@ export function SnackbarElement(
     <Animated.View
       accessibilityViewIsModal
       style={[
-        { transform: [{ translateY: animatedValue }] },
+        {transform: [{translateY: animatedValue}]},
         styles.container(isErrorSnackbar),
-      ]}
-    >
+      ]}>
       {icon ? renderTextAndIcon() : renderText()}
       {renderTouchableText()}
     </Animated.View>
@@ -90,8 +89,7 @@ export function SnackbarElement(
           <Text
             ref={snackbarRef}
             style={styles.leftText(isErrorSnackbar)}
-            testID="snackbarTextWithIcon"
-          >
+            testID="snackbarTextWithIcon">
             {text}
           </Text>
         </View>
@@ -103,15 +101,11 @@ export function SnackbarElement(
     if (!onPressActionText || !onPress) return null;
     return (
       <View style={styles.touchableContainer}>
-        <TouchableOpacity
-          testID={"onSnackbarPress"}
-          onPress={onPress}
-        >
+        <TouchableOpacity testID={"onSnackbarPress"} onPress={onPress}>
           <Text
             numberOfLines={1}
             style={styles.touchableText(isErrorSnackbar)}
-            testID="snackbarOnPressText"
-          >
+            testID="snackbarOnPressText">
             {onPressActionText}
           </Text>
         </TouchableOpacity>
@@ -125,8 +119,7 @@ export function SnackbarElement(
         <Text
           ref={snackbarRef}
           style={styles.text(isErrorSnackbar)}
-          testID="snackbarText"
-        >
+          testID="snackbarText">
           {text}
         </Text>
       </View>

@@ -1,5 +1,5 @@
-import React, { Context } from "react";
-import { Duration } from ".";
+import React, {Context} from "react";
+import {Duration} from ".";
 
 /**
  * Interface for the mapped arguments of the snackbar context

@@ -1,15 +1,18 @@
-import { AnyAction, combineReducers, CombinedState } from "redux";
-import { NotesState } from "../models";
-import { notesReducer } from "./NotesReducer";
+import {AnyAction, combineReducers, CombinedState} from "redux";
+import {NotesState} from "../models";
+import {notesReducer} from "./NotesReducer";
 
 export interface AppState {
-    NotesState: NotesState
+  NotesState: NotesState;
 }
 
 export const reducers = combineReducers<AppState>({
-    NotesState: notesReducer,
-})
+  NotesState: notesReducer,
+});
 
-export const rootReducer = (state: AppState | undefined, action: AnyAction): AppState => {
-    return reducers(state, action);
-}
+export const rootReducer = (
+  state: AppState | undefined,
+  action: AnyAction,
+): AppState => {
+  return reducers(state, action);
+};

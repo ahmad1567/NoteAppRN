@@ -1,4 +1,4 @@
-import { Animated, Platform, UIManager } from "react-native";
+import {Animated, Platform, UIManager} from "react-native";
 
 /**
  * A utility class for Animations
@@ -39,7 +39,7 @@ export class AnimationsUtils {
   ): Animated.CompositeAnimation {
     const {
       snackbarHideAnimation,
-      snackbarAnimationParams: { translateYFinal, travelDuration },
+      snackbarAnimationParams: {translateYFinal, travelDuration},
     } = AnimationsUtils;
     return duration
       ? Animated.sequence([
@@ -65,10 +65,8 @@ export class AnimationsUtils {
   public static snackbarHideAnimation(
     animatedValue: Animated.Value,
   ): Animated.CompositeAnimation {
-    const {
-      translateYInitial,
-      travelDuration,
-    } = AnimationsUtils.snackbarAnimationParams;
+    const {translateYInitial, travelDuration} =
+      AnimationsUtils.snackbarAnimationParams;
     return Animated.timing(animatedValue, {
       toValue: translateYInitial,
       duration: travelDuration,

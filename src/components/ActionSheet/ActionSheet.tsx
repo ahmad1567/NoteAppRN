@@ -1,8 +1,8 @@
-import React, { MutableRefObject } from "react";
-import { useEffect } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import { ActionSheetCustom } from "react-native-actionsheet";
-import styles, { actionSheetStyles } from "./styles";
+import React, {MutableRefObject, useEffect} from 'react';
+
+import {Text, View, TouchableOpacity} from "react-native";
+import {ActionSheetCustom} from "react-native-actionsheet";
+import styles, {actionSheetStyles} from "./styles";
 
 export interface Option {
   icon?: JSX.Element;
@@ -24,7 +24,7 @@ export interface ActionSheetProps {
 }
 
 export function ActionSheet(props: ActionSheetProps): JSX.Element {
-  const { actionSheetElement, options } = props;
+  const {actionSheetElement, options} = props;
 
   useEffect(() => {
     if (actionSheetElement?.current && options) {
@@ -34,9 +34,10 @@ export function ActionSheet(props: ActionSheetProps): JSX.Element {
       actionSheetElement.current._cancel = () =>
         actionSheetElement.current?.hide();
 
-      actionSheetElement.current.translateY = actionSheetElement.current._calculateHeight();
+      actionSheetElement.current.translateY =
+        actionSheetElement.current._calculateHeight();
     }
-  }, [actionSheetElement, options])
+  }, [actionSheetElement, options]);
 
   const getActionSheetOptions = (
     option: Option,
@@ -46,10 +47,9 @@ export function ActionSheet(props: ActionSheetProps): JSX.Element {
       key={index}
       style={styles.buttonOptionContainer}
       onPress={() => {
-        actionSheetElement?.current?.hide()
-        option.onPress()
-      }}
-    >
+        actionSheetElement?.current?.hide();
+        option.onPress();
+      }}>
       <>
         <View style={actionSheetStyles.buttonBox}>
           {!!option.icon && <View style={styles.icon}>{option.icon}</View>}

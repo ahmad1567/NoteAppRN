@@ -1,5 +1,5 @@
-import { Framework } from "../../Framework.ts/Framework";
-import { Note } from "../../Framework.ts/models";
+import { Framework } from "../../Framework/Framework";
+import { Note } from "../../Framework/models";
 
 export interface Action {
   type: ActionTypes;
@@ -39,7 +39,7 @@ const deleteNoteById = (noteId: string): Action => ({
   result: noteId,
 });
 
-const getNotes = (onDone: () => void): ThunkAction => {
+const getNotes = (onDone?: () => void): ThunkAction => {
   return async (dispatch: Dispatch): Promise<void> => {
     try {
       dispatch(updateIsLoading(false));
@@ -49,7 +49,7 @@ const getNotes = (onDone: () => void): ThunkAction => {
       dispatch(updateHasError(true));
     } finally {
       dispatch(updateIsLoading(false));
-      onDone();
+      onDone?.();
     }
   };
 };

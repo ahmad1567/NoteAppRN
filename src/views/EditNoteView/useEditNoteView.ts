@@ -1,10 +1,10 @@
 import {useNavigation, useRoute} from "@react-navigation/native";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {Note} from "../../Framework.ts/models";
+import {Note} from "../../Framework/models";
 import {addNote, updateExistingNote} from "../../redux/actions";
 import {ImagePickerResponse, launchCamera} from "react-native-image-picker";
-import {Framework} from "../../Framework.ts/Framework";
+import {Framework} from "../../Framework/Framework";
 import {AlertUtils} from "../../utilities/AlertUtils";
 
 export interface EditNoteViewProps {

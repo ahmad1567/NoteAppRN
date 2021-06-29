@@ -1,6 +1,6 @@
 import {useNavigation} from "@react-navigation/native";
 import {useCallback, useReducer} from "react";
-import {Framework} from "../../Framework.ts/Framework";
+import {Framework} from "../../Framework/Framework";
 
 interface LoginState {
   email?: string;

@@ -4,7 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {styles} from "./styles";
 import {ActionSheet, ActionSheetElement} from "../ActionSheet";
 import {LocaleUtils} from "../../utilities";
-import {Note} from "../../Framework.ts/models";
+import {Note} from "../../Framework/models";
 import {Icons} from "../../../resources/icons";
 import {IconSize, Colors} from "../../Styles";
 

@@ -1,5 +1,5 @@
 import {useEffect, useCallback, useMemo} from "react";
-import {Framework} from "../Framework.ts/Framework";
+import {Framework} from "../Framework/Framework";
 import {useAuthenication} from "../hooks/AuthenicationHook";
 import {HttpClient} from "../http/HttpClient";
 import auth from '@react-native-firebase/auth';

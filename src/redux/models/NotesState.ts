@@ -1,4 +1,4 @@
-import {Note} from "../../Framework.ts/models";
+import {Note} from "../../Framework/models";
 
 export interface NotesState {
   notes: Note[];

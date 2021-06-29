@@ -43,9 +43,11 @@ export class HttpClient {
       };
 
       const response = await fetch(url, request);
+      console.log(response);
       const parsedResponse = await response.json();
       return parsedResponse as TResult;
     } catch (error) {
+      console.log(error);
       throw error;
     }
   }

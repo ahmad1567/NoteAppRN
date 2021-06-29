@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Note } from "../../Framework.ts/models";
+import { Note } from "../../Framework/models";
 import { RouteNames } from "../../navigation/routes";
 import { getNotes, deleteNote as deleteNoteById } from "../../redux/actions";
 import { AppState } from "../../redux/reducers/index";

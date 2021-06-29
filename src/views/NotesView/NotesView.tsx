@@ -1,7 +1,7 @@
 import React from "react";
 import { View, ScrollView, RefreshControl } from "react-native";
 import { NoteCard } from "../../components/noteCard";
-import { Note } from "../../Framework.ts/models";
+import { Note } from "../../Framework/models";
 import { TopBar } from "../../components/topBar";
 import { CircleButton } from "../../components/CircleButton";
 import { LocaleUtils } from "../../utilities";

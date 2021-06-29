@@ -1,0 +1,19 @@
+{
+    "notes": "Notes",
+    "reminders": "Reminders",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "note": "Note",
+    "save": "save",
+    "title": "Title",
+    "set_as_reminder": "Set as reminder",
+    "edit": "Edit",
+    "delete": "Delete",
+    "generic_error": "Somethin went wrong",
+    "please_try_again": "Please try again soon",
+    "no_notes": "You don't have any notes",
+    "created_on": "Created on",
+    "no_user": "Don't have user",
+    "sign_up": "Sign up"
+}
